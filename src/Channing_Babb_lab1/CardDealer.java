@@ -42,12 +42,31 @@ public class CardDealer {
             }
         }
 
+        int[] hand = new int[5];
         // loop through the array
         for (int i = 0; i < HAND_SIZE; i++) {
             // generate random number between 1 and 52 (there are 52 cards in a deck)
             int card = rand.nextInt(52);
-            // output
-            System.out.print(deck[card] + "\n");
+            boolean hasCardAlready = false;
+
+            if (i == 0) { // if first iteration, just put it in the hand and continue
+                hand[i] = card;
+                System.out.print(deck[card] + "\n");
+                continue;
+            }
+
+            for (int j = 0; j < hand.length; j++) { // check if in hand
+                if (card == hand[j]) {
+                    hasCardAlready = true; // has the card already
+                    i--; // decrement i
+                    break;
+                }
+            }
+            if (!hasCardAlready) { // if it doesn't have the card
+                hand[i] = card; // put in array
+                // output
+                System.out.print(deck[card] + "\n"); // print
+            }
         }
 
     }

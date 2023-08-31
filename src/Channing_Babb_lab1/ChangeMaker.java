@@ -44,9 +44,7 @@ public class ChangeMaker {
 
         // loop through the array
         for (int i = 0; i < monetaryValues.length; i++) {
-            // get the amount needed
             int amountNeeded = getAmountNeeded(monetaryValue, monetaryValues[i]);
-            // get the remainder
             double remainder = getRemainder(monetaryValue, monetaryValues[i]);
             // print the amount needed
             if (amountNeeded == 1) // if one, print the singular name of the note/coin

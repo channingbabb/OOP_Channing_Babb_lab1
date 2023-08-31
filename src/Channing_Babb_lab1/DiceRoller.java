@@ -11,6 +11,7 @@ public class DiceRoller {
 
     /**
      * DiceRoller function
+     * This is the primary function in the diceroller class
      */
     public static void diceRoller() {
         // create new instance of Scanner
