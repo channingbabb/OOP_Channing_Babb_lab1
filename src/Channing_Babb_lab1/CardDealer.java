@@ -12,14 +12,14 @@ public class CardDealer {
         // constant for HAND_SIZE
         final int HAND_SIZE = 5;
 
+        int[] ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
         String[] deck = new String[52];
         String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
-        int[] ranks = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-                11, 12, 13};
+        Random rand = new Random();
 
         // initialize the deck array
         for (int i = 0; i < suits.length; i++) {
-            for (int j=0; j<ranks.length; j++) {
+            for (int j = 0; j < ranks.length; j++) {
                 String actualRank;
                 switch (ranks[j]){
                     case 1:
@@ -41,9 +41,6 @@ public class CardDealer {
                 deck[ranks.length*i + j] = actualRank + " of " + suits[i];
             }
         }
-
-        // create new instance of random
-        Random rand = new Random();
 
         // loop through the array
         for (int i = 0; i < HAND_SIZE; i++) {
